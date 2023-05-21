@@ -10,9 +10,11 @@ const formData = new FormData(e.currentTarget)
 if(e.currentTarget.elements.password.value === "" || e.currentTarget.elements.email.value === ""){
     alert("всі поля повинні бути заповнені")
 } else {
-    formData.forEach((value,name)=>{
-        const element = [...formData]
-         console.log(element);});
+    const objekt ={
+        email: e.currentTarget.elements.email.value,
+        password : e.currentTarget.elements.password.value,
+    }
+    console.log(objekt);
 }
 
 e.target.reset()

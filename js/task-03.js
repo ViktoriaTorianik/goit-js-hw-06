@@ -19,3 +19,4 @@ console.log(listEl);
 galleryEl.insertAdjacentHTML("afterbegin", listEl)
 galleryEl.style.display = "flex";
 galleryEl.style.gap = "30px";
+
