@@ -11,22 +11,31 @@ const destroyEl = document.querySelector("button[data-destroy]")
 console.log(destroyEl);
 
 
-
-
 createEl.addEventListener ("click", createBoxes)
 function createBoxes (){
+  
   const listEl = document.querySelector("#boxes")
   const boxEl = document.createElement("div");
   boxEl.classList.add("classJS");
   boxEl.style.width = "30px";
   boxEl.style.height = "30px";
+  let size = 30
   boxEl.style.backgroundColor = getRandomHexColor();
-  listEl.append(boxEl);
- 
+  for (let i = 0; i < numberEl.value; i+=1) {
+    const boxEl = document.createElement("div");
+    size = size + 10 
+  boxEl.classList.add("classJS");
+  boxEl.style.width = `${size + 10}px`;
+  boxEl.style.height = `${size + 10}px`;
+  boxEl.style.backgroundColor = getRandomHexColor();
+    listEl.append(boxEl);
+  }
+  
+
 }
 
 destroyEl.addEventListener ("click", destroyBoxes)
 function destroyBoxes (){
-  const listEl = document.querySelector(".classJS")
-  listEl.remove()
+  const listEl = document.querySelector("#boxes")
+  listEl.innerHTML = ""
 }
